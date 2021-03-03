@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D4F8D5A8-1926-4550-8D34-3487B548BCED}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DotNetDevGuide.DirectoryServices</RootNamespace>
+    <AssemblyName>DotNetDevGuide.DirectoryServices</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.2.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdUtils.cs" />
+    <Compile Include="BindingContext.cs" />
+    <Compile Include="Chapter10\DomainPolicy.cs" />
+    <Compile Include="Chapter10\LdapPasswordModifier.cs" />
+    <Compile Include="Chapter10\Lockout.cs" />
+    <Compile Include="Chapter10\PasswordExpires.cs" />
+    <Compile Include="Chapter10\Program.cs" />
+    <Compile Include="Chapter11\Group.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Chapter11\GroupExpander.cs" />
+    <Compile Include="Chapter11\GroupExpander2.cs" />
+    <Compile Include="Chapter11\Program.cs" />
+    <Compile Include="Chapter12\LdapAuth.cs" />
+    <Compile Include="Chapter12\NTAuth.cs" />
+    <Compile Include="Chapter12\Program.cs" />
+    <Compile Include="Chapter4\Program.cs" />
+    <Compile Include="Chapter5\Async.cs" />
+    <Compile Include="Chapter5\DirSync.cs" />
+    <Compile Include="Chapter5\PartialResults.cs" />
+    <Compile Include="Chapter5\Program.cs" />
+    <Compile Include="Chapter6\Program.cs" />
+    <Compile Include="Chapter7\Program.cs" />
+    <Compile Include="Chapter8\AuthStatusChecker.cs" />
+    <Compile Include="Chapter8\Program.cs" />
+    <Compile Include="Chapter8\SchemaGuidConverter.cs" />
+    <Compile Include="Chapter9\Program.cs" />
+    <Compile Include="Configuration\LdapSettings.cs" />
+    <Compile Include="Chapter3\Program.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structs.cs" />
+    <Compile Include="TestUtils.cs" />
+    <Compile Include="Win32.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ActiveDs">
+      <Guid>{97D25DB0-0363-11CF-ABC4-02608C9E7553}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
